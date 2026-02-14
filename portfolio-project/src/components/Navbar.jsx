@@ -16,9 +16,11 @@ export default function Navbar() {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setOpen(false); // close mobile menu
+      setOpen(false);
     }
   };
+
+  const resumePath = `${import.meta.env.BASE_URL}TulaBhagyasriResume.pdf`;
 
   return (
     <nav className="fixed top-0 w-full bg-gradient-to-r from-indigo-500 to-purple-600 shadow z-50">
@@ -39,7 +41,7 @@ export default function Navbar() {
           ))}
 
           <a
-            href="/resume.pdf"
+            href={resumePath}
             download
             className="flex items-center gap-2 px-4 py-2 bg-white text-indigo-600 rounded-full font-semibold hover:bg-gray-200 transition"
           >
@@ -56,31 +58,27 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu with Fade-Up Animation */}
+      {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out
           ${open ? "max-h-screen opacity-100 py-6" : "max-h-0 opacity-0 py-0"}
         `}
       >
         <div className="flex flex-col items-center gap-6 text-white">
-          {links.map((link, index) => (
+          {links.map((link) => (
             <button
               key={link.id}
               onClick={() => handleClick(link.id)}
-              className={`font-medium text-lg transition-all duration-500 transform
-                ${open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}
-                delay-${index * 100}`}
+              className="font-medium text-lg transition-all duration-500"
             >
               {link.label}
             </button>
           ))}
 
           <a
-            href="/TulaBhagyasriResume.pdf"
+            href={resumePath}
             download
-            className={`flex items-center gap-2 px-4 py-2 bg-white text-indigo-600 rounded-full font-semibold hover:bg-gray-200 transition
-              ${open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}
-            `}
+            className="flex items-center gap-2 px-4 py-2 bg-white text-indigo-600 rounded-full font-semibold hover:bg-gray-200 transition"
           >
             <FaFileDownload /> Resume
           </a>
