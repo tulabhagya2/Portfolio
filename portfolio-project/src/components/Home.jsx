@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
-  const text = "Full Stack Web Developer | Backend Enthusiast";
+  const text = "Full Stack Web Developer";
   const [show, setShow] = useState("");
   const [i, setI] = useState(0);
   const [visible, setVisible] = useState(false);

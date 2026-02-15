@@ -4,26 +4,29 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center bg-slate-50 px-6"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 via-white to-indigo-100 px-6 py-20"
     >
-      <div className="max-w-5xl w-full grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-14 items-center">
 
         {/* Image */}
         <div className="flex justify-center">
-          <img
-            src={`${import.meta.env.BASE_URL}profile.jpg`}
-            alt="Profile"
-            className="w-64 h-72 object-cover rounded-2xl shadow-md"
-          />
+          <div className="relative">
+            <img
+              src={`${import.meta.env.BASE_URL}profile.jpg`}
+              alt="Profile"
+              className="w-72 h-80 object-cover rounded-3xl shadow-2xl border-4 border-white"
+            />
+            <div className="absolute inset-0 rounded-3xl bg-indigo-400/10 blur-2xl -z-10"></div>
+          </div>
         </div>
 
         {/* Content */}
         <div>
-          <h2 className="text-3xl font-bold text-slate-800 mb-4">
+          <h2 className="text-3xl font-bold mb-12 text-center text-indigo-600">
             About Me
           </h2>
 
-          <div className="text-slate-700 space-y-4">
+          <div className="text-slate-700 text-lg leading-relaxed space-y-5">
             <p>
               I am a passionate web developer focused on building clean,
               user-friendly, and responsive web applications. I have hands-on
@@ -33,14 +36,14 @@ export default function About() {
             </p>
 
             {/* Resume Buttons */}
-            <div className="flex gap-4 mt-6 flex-wrap">
+            <div className="flex gap-4 mt-8 flex-wrap">
 
               {/* View Resume */}
               <a
                 href={`${import.meta.env.BASE_URL}TulaBhagyasriResume.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 bg-slate-800 text-white rounded-lg hover:bg-slate-900 transition"
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
               >
                 <FaFilePdf />
                 View Resume
@@ -50,7 +53,7 @@ export default function About() {
               <a
                 href={`${import.meta.env.BASE_URL}TulaBhagyasriResume.pdf`}
                 download
-                className="flex items-center gap-2 px-5 py-2.5 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-100 transition"
+                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
               >
                 <FaDownload />
                 Download
