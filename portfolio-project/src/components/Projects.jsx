@@ -15,7 +15,7 @@ export default function Projects() {
       "A personal productivity tool to log daily activities and visualize time spent. Built with HTML, CSS, JavaScript, and Firebase Realtime Database. Features login/signup, dashboard, and analytics charts.",
     image: "dashboard.JPG", // Place your screenshot in public/images/dashboard.png
     github: "https://github.com/tulabhagya2/ai-evaluation-repo",
-    liveDemo: "https://shiny-llama-9f88d6.netlify.app"
+    liveDemo: "https://tulabhagya2.github.io/ai-evaluation-repo/"
 
   };
 
